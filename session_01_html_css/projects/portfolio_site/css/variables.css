@@ -1,0 +1,8 @@
+:root {
+    --color-primary: #6366f1;    /* Indigo */
+    --color-secondary: #8b5cf6;  /* Purple */
+    --color-dark: #1e293b;       /* Slate dark */
+    --color-light: #f8fafc;      /* Slate light */
+    --color-text: #334155;       /* Slate text */
+    --font-main: 'Segoe UI', sans-serif;
+}
