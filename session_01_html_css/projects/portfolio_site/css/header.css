@@ -25,7 +25,6 @@ nav a:hover {
     color: var(--color-primary);
 }
 
-/* Ẩn menu toggle trên màn hình máy tính */
 .menu-toggle, .hamburger {
     display: none;
 }
