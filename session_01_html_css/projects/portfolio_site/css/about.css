@@ -1,1 +1,49 @@
+.about-section {
+    padding: 5rem 5%;
+    background-color: white;
+}
 
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 350px;
+    
+
+    aspect-ratio: 1 / 1; 
+    object-fit: cover;
+    
+    border-radius: 50%; 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    display: block;
+    margin: 0 auto;
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.about-content .lead {
+    font-size: 1.25rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
