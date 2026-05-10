@@ -13,10 +13,10 @@
     color: var(--color-primary);
 }
 
-/* --- TRANG TRÍ CHO THẺ <progress> NGUYÊN BẢN --- */
+
 
 progress {
-    /* Tắt giao diện mặc định xấu xí của trình duyệt đi */
+
     -webkit-appearance: none;
     appearance: none;
     
