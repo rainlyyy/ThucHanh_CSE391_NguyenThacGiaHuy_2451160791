@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản Lý Công Việc</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <span class="icon">📋</span>
+  <div>
+    <h1>Quản Lý Công Việc</h1>
+    <p>Theo dõi và quản lý công việc cá nhân hiệu quả</p>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- Thống kê -->
+  <div class="stats">
+    <div class="stat-card">
+      <div class="stat-label">Tổng công việc</div>
+      <div class="stat-value" id="total-tasks">0</div>
+    </div>
+    <div class="stat-card done">
+      <div class="stat-label">Đã hoàn thành</div>
+      <div class="stat-value" id="done-tasks">0</div>
+    </div>
+    <div class="stat-card pending">
+      <div class="stat-label">Chưa hoàn thành</div>
+      <div class="stat-value" id="pending-tasks">0</div>
+    </div>
+  </div>
+
+  <!-- Toolbar -->
+  <div class="toolbar">
+    <h2>Danh sách công việc</h2>
+    <button class="btn btn-primary" id="btn-open-modal">➕ Thêm công việc</button>
+  </div>
+
+  <!-- Danh sách công việc -->
+  <div id="task-list"></div>
+
+</div>
+
+<!-- Thông báo -->
+<div id="notification"></div>
+
+<!-- Modal thêm/sửa -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="modal-title">Thêm công việc mới</h3>
+      <button class="close-btn" id="btn-close-modal">✕</button>
+    </div>
+
+    <div class="form-group">
+      <label>Tiêu đề công việc *</label>
+      <input type="text" id="tieude" placeholder="Nhập tên công việc...">
+      <span class="form-error" id="err-tieude"></span>
+    </div>
+
+    <div class="form-group">
+      <label>Mô tả</label>
+      <textarea id="mota" rows="3" placeholder="Mô tả ngắn về công việc..."></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Hạn hoàn thành *</label>
+      <input type="date" id="hanht">
+      <span class="form-error" id="err-hanht"></span>
+    </div>
+
+    <div class="form-group">
+      <label>Mức ưu tiên</label>
+      <select id="uutien">
+        <option value="high">🔴 Cao</option>
+        <option value="mid" selected>🟡 Trung bình</option>
+        <option value="low">🟢 Thấp</option>
+      </select>
+    </div>
+
+    <div class="form-actions">
+      <button class="btn btn-secondary" id="btn-cancel">Hủy</button>
+      <button class="btn btn-primary" id="btn-submit">💾 Lưu</button>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

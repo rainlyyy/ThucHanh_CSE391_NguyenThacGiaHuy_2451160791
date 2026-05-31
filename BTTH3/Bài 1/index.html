@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản Lý Sinh Viên</title>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <span class="icon">🎓</span>
+  <div>
+    <h1>Quản Lý Sinh Viên</h1>
+    <p>Hệ thống quản lý thông tin sinh viên</p>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- Thống kê -->
+  <div class="stats">
+    <div class="stat-card">
+      <span class="stat-icon">👥</span>
+      <div>
+        <div class="stat-label">Tổng số sinh viên</div>
+        <div class="stat-value" id="total-students">0</div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <span class="stat-icon">📊</span>
+      <div>
+        <div class="stat-label">Điểm trung bình lớp</div>
+        <div class="stat-value" id="avg-gpa">0.00</div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <span class="stat-icon">🏆</span>
+      <div>
+        <div class="stat-label">Sinh viên xuất sắc (≥ 8.5)</div>
+        <div class="stat-value" id="excellent-count">0</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toolbar -->
+  <div class="toolbar">
+    <h2>Danh sách sinh viên</h2>
+    <button class="btn btn-primary" id="btn-open-modal">➕ Thêm sinh viên</button>
+  </div>
+
+  <!-- Bảng dữ liệu -->
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Mã SV</th>
+          <th>Họ và tên</th>
+          <th>Ngày sinh</th>
+          <th>Lớp học</th>
+          <th>Điểm TB</th>
+          <th>Email</th>
+          <th>Thao tác</th>
+        </tr>
+      </thead>
+      <tbody id="student-table-body"></tbody>
+    </table>
+  </div>
+
+</div>
+
+<!-- Thông báo -->
+<div id="notification"></div>
+
+<!-- Modal thêm/sửa -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="modal-title">Thêm sinh viên mới</h3>
+      <button class="close-btn" id="btn-close-modal">✕</button>
+    </div>
+    <div class="form-grid">
+      <div class="form-group">
+        <label>Mã sinh viên *</label>
+        <input type="text" id="msv" placeholder="VD: SV001">
+        <span class="form-error" id="err-msv"></span>
+      </div>
+      <div class="form-group">
+        <label>Lớp học *</label>
+        <input type="text" id="lophoc" placeholder="VD: K66A">
+        <span class="form-error" id="err-lophoc"></span>
+      </div>
+      <div class="form-group full">
+        <label>Họ và tên *</label>
+        <input type="text" id="hoten" placeholder="Nhập họ và tên đầy đủ">
+        <span class="form-error" id="err-hoten"></span>
+      </div>
+      <div class="form-group">
+        <label>Ngày sinh</label>
+        <input type="date" id="ngaysinh">
+        <span class="form-error" id="err-ngaysinh"></span>
+      </div>
+      <div class="form-group">
+        <label>Điểm trung bình *</label>
+        <input type="number" id="diemtb" min="0" max="10" step="0.01" placeholder="0.00 – 10.00">
+        <span class="form-error" id="err-diemtb"></span>
+      </div>
+      <div class="form-group full">
+        <label>Email *</label>
+        <input type="email" id="email" placeholder="example@email.com">
+        <span class="form-error" id="err-email"></span>
+      </div>
+    </div>
+    <div class="form-actions">
+      <button class="btn btn-secondary" id="btn-cancel">Hủy</button>
+      <button class="btn btn-primary" id="btn-submit">💾 Lưu</button>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
